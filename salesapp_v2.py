@@ -91,7 +91,8 @@ st.title('Sales Forecast App')
 with st.sidebar:
     st.subheader('Make your selections')
     cluster = st.selectbox('Select a cluster from the dropdown list',(cluster_list))
-    country = st.selectbox('Select a country from the dropdown list',(list(levels[cluster])))
+    country = st.selectbox('Select a country from the dropdown list',(base_list+list(levels[cluster])))    
+    # country = st.selectbox('Select a country from the dropdown list',(list(levels[cluster])))
     if country =='All':
         district = st.selectbox('Select a district from the dropdown list',(base_list))
     else: district = st.selectbox('Select a district from the dropdown list',(base_list+list(levels[cluster][country])))
